@@ -1,0 +1,14 @@
+server:
+    port: 8084
+api:
+    jph:
+        domain: "jsonplaceholder.typicode.com"
+        endpoints:
+            user: "/users"
+            post: "/posts"
+            album: "/albums"
+            todo: "/todos"
+            comment: "/comments"
+            photo: "/photos"
+    # https://jsonplaceholder.typicode.com/
+    # https://jsonplaceholder.typicode.com/users
