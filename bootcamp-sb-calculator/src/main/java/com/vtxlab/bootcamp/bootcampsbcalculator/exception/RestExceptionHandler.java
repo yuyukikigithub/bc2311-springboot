@@ -28,6 +28,11 @@ public class RestExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiError(9,"Missing Input"));
     }
 
+    @ExceptionHandler(NumberFormatException.class)
+    public ResponseEntity<ApiError> handleNumberFormatException(NumberFormatException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiError(9,"Invalid Input"));
+    }
+
     // @ExceptionHandler(MethodArgumentNotValidException.class)
     // public ResponseEntity<ApiError> handleValidationExceptions(MethodArgumentNotValidException ex) {
     //     List<String> errors = new ArrayList<>();
