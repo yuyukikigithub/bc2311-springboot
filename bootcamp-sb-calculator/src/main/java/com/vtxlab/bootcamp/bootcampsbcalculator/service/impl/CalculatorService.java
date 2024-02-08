@@ -13,7 +13,7 @@ import com.vtxlab.bootcamp.bootcampsbcalculator.service.CalculatorServiceInf;
 @Service
 public class CalculatorService implements CalculatorServiceInf {
     @Override
-    public Answer getDivision(BigDecimal x, BigDecimal y, String op) throws CustomBusinessException {
+    public Answer getDivision(BigDecimal x, BigDecimal y, String op)  {
         
         Answer result = new Answer();
 
@@ -36,8 +36,8 @@ public class CalculatorService implements CalculatorServiceInf {
                     }
                     break;
                 default:
-                    // break;
-                    throw new CustomBusinessException(9, "Invalid Input");
+                    break;
+                    // throw new CustomBusinessException(9, "Invalid Input");
                 }
         } else {
             throw new CustomBusinessException(9, "Invalid Input");

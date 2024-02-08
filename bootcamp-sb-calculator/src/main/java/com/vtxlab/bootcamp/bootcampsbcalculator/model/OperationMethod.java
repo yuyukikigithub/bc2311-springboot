@@ -1,5 +1,8 @@
 package com.vtxlab.bootcamp.bootcampsbcalculator.model;
 
+// import org.springframework.context.annotation.Configuration;
+
+// @Configuration
 public enum OperationMethod {
     ADD("add"),
     SUB("sub"),
@@ -28,7 +31,7 @@ public enum OperationMethod {
 
     public static void main(String[] args) {
         // OperationMethod sw =  OperationMethod.ADD;
-        System.out.println(OperationMethod.getOpFmVal("sub"));
+        System.out.println(OperationMethod.getOpFmVal("dilv"));
         
     }
 }

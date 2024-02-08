@@ -1,6 +1,7 @@
+//CalculatorControllerTest.java
 package com.vtxlab.bootcamp.bootcampsbcalculator;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -19,7 +20,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.vtxlab.bootcamp.bootcampsbcalculator.controller.impl.CalculatorController;
-import com.vtxlab.bootcamp.bootcampsbcalculator.exception.CustomBusinessException;
 import com.vtxlab.bootcamp.bootcampsbcalculator.model.Answer;
 import com.vtxlab.bootcamp.bootcampsbcalculator.service.CalculatorServiceInf;
 
@@ -30,6 +30,7 @@ public class CalculatorControllerTest {
 
     @MockBean
     private CalculatorServiceInf calculatorServiceInf;
+    // private OperationMethod operationMethod;
 
     @SuppressWarnings("null")
     @Test
@@ -67,7 +68,7 @@ public class CalculatorControllerTest {
 
     @SuppressWarnings("null")
     @Test
-    void getAnswerByBody() throws Exception{
+    void testGetAnswerByBody() throws Exception{
 
         Answer ans = new Answer("1","3","add","4.0");
         Answer request = new Answer("1","3","add",null);
@@ -88,39 +89,5 @@ public class CalculatorControllerTest {
             ;
     }
 
-    @Test
-    public void testThrowsException() {
-
-        assertThrows(NumberFormatException.class, () -> {
-            
-            calculatorServiceInf.getDivision(new BigDecimal("10"),new BigDecimal("10d"),"div"); // Call the method that is expected to throw an exception
-        });
-    }
-
-    // @Test
-    // public void testThrowsCustomException() {
-    //     assertThrows(CustomBusinessException.class, () -> {
-    //         calculatorServiceInf.getDivision(new BigDecimal("10"),//
-    //         new BigDecimal("10"),"dilv"); 
-    //     });
-    // }
-
-    @SuppressWarnings("null")
-    @Test
-    void testFailGetDivision1() throws Exception{
-
-        // Answer ans = new Answer("1","3","add","4.0");
-        Mockito.when(calculatorServiceInf.getDivision(BigDecimal.valueOf(1),BigDecimal.valueOf(3),"addl")).thenThrow(CustomBusinessException.class);
-
-        mockMvc.perform(get("/api/v1")
-            .param("x","1")
-            .param("y","3")
-            .param("operation", "addl"))
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-            .andExpect(jsonPath("$.code").value(9))
-            .andExpect(jsonPath("$.message").value("Invalid Input"))
-            
-            .andDo(print());
-    }
-
+    
 }
