@@ -1,0 +1,13 @@
+server:
+    port: 8080
+# https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=tether%2Cbitcoin%2Cethereum&x_cg_demo_api_key=CG-hjGZ41gYarFDB5K9a5Q2n487
+# https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd
+api:
+    cgk:
+        domain: "api.coingecko.com"
+        middlepart: "/api/v3/coins/markets?"
+        endpart: "&x_cg_demo_api_key=CG-hjGZ41gYarFDB5K9a5Q2n487"
+
+        # https://api.coingecko.com/api/v3/coins/list
+        validId: "/api/v3/coins/list"
+
