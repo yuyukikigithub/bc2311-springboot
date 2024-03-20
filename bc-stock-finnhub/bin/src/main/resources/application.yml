@@ -1,0 +1,9 @@
+server:
+    port: 8091
+
+api:
+    finn:
+        domain: "finnhub.io"
+        endpart: "token=cn9bgb1r01qoee99uv00cn9bgb1r01qoee99uv0g"
+
+        

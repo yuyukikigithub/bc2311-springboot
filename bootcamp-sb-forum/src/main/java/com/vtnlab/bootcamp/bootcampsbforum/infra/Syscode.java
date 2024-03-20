@@ -7,7 +7,12 @@ public enum Syscode {
     OK("000000","OK."), 
     NOTFOUND("100000","Not Found."),
     JPHCLIENT_NOT_AVAILABLE("10001","JsonPlaceHoler API is unavailable"),
-    NPE_EXCEPTION("90000","Runtime Exception - NPE");
+    REST_CLIENT_EXCEPTION("90001","RestClient Exception"),
+    NPE_EXCEPTION("90000","Runtime Exception - NPE"),
+    GENERAL_EXCEPTION("99999","General Exception"),
+    
+    REQUEST_PARAM_EXCEPTION("900002", "Invalid Request Parameter")
+    ;
     
     private String code;
 

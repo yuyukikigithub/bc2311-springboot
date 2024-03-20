@@ -1,0 +1,13 @@
+services:
+ 
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+#     volumes:
+# - pgdata:/var/lib/postgresql/data
+
+  coingecko:
+    build: ./bc-crypto-coingecko/
+    restart: always

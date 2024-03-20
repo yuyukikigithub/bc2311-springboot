@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Stock List</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Add Stock List</h1>
+        <form action="#" th:action="@{/addstocklist}" method="post" th:object="${stockListEntity}">
+            <label>Stock Id</label>
+            <input type="text" th:field="*{stockId}"/>
+            <button type="submit">Add</button>
+
+        </form>
+        <a href="/">Back</a>
+
+    </div>
+</body>
+</html>
